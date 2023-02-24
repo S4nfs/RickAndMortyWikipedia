@@ -34,7 +34,7 @@ const Discover = () => {
       <div className="text-center pb-12">
         <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-white">
           Rick & Morty Wiki
-        </h1>
+        </h1><a href="https://github.com/S4nfs"><p className="font-base text-xs text-gray-500 text-center">Made By SV</p></a>
         <h2 className="text-base font-bold text-indigo-600 mt-5 italic">
           About {data?.info?.count} results:
         </h2>
