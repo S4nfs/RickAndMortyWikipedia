@@ -42,7 +42,7 @@ const Discover = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {dataFetched?.map((result) => (
           <div key={result.id} className="w-full bg-gray-900 rounded-lg sahdow-lg p-12 flex flex-col justify-center items-center">
-            <div className="mb-3">
+            <div className="mb-0 mt-0">
               <img className="object-center object-cover rounded-full h-36 w-36" src={result?.image} alt="charater image" />
             </div>
             <div className="text-center h-[290px]">
@@ -51,10 +51,10 @@ const Discover = () => {
                 <span className={`flex flex-start w-4 h-4 rounded-full border-white mt-1 mr-2 border-none ${result?.status === 'Alive' ? 'bg-green-500 ' : result?.status === 'Dead' ? 'bg-red-500 ' : 'bg-gray-500 '}`} />
                 <p className="text-base text-gray-400 font-normal">{result?.status} - {result?.species} -  {result?.gender} </p>
               </div>
-              <Location id={result.id} />
+              <Location id={result?.location?.url?.split('/')[5]} origin={result?.origin?.name} />
               <div className="relative flex flex-col items-center">
                 <h3 className="text-[#fcd34d] font-bold mt-2">Chapters: </h3>
-                <ul className="list-disc whitespace-nowrap overflow-y-auto overflow-x-hidden scrollbar-hide h-32 mt-2 text-white">
+                <ul className="list-disc whitespace-nowrap overflow-y-auto overflow-x-hidden scrollbar-hide h-16 mt-2 text-white">
                   {result?.episode.map((ep) => (<Chapter chapterId={ep.split('/')[5]} />))}
                 </ul>
               </div>
